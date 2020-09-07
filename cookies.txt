@@ -1,0 +1,9 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+demo.mekshq.com	TRUE	/gridlove/	FALSE	1999999999	woocommerce_items_in_cart	1
+demo.mekshq.com	TRUE	/gridlove/	FALSE	1999999999	wp_woocommerce_session_2bca6a04fe72776e8f5a584e1505813f	d76f89f5eeb76539f980f09a1036d124%7C%7C1599575829%7C%7C1599572229%7C%7C98dc2d987c73ed0f342c38c26cf3c6c6
+demo.mekshq.com	TRUE	/gridlove/	FALSE	1999999999	woocommerce_recently_viewed	34%7C15%7C60%7C50%7C40%7C96%7C99%7C73%7C83%7C87%7C90%7C70%7C67%7C79
+demo.mekshq.com	TRUE	/gridlove/	FALSE	1999999999	woocommerce_cart_hash	466496ba2f8c00237f2504cf1cf99880
+.mekshq.com	TRUE	/	FALSE	1999999999	__cfduid	d53fe320179f59dfd6b83cc4f2fadb0631599402648
+demo.mekshq.com	TRUE	/	FALSE	1999999999	SameSite	Lax
+
