@@ -15,12 +15,12 @@ class Vlogger(models.Model):
     age = models.IntegerField()
     college = models.TextField()
     facebook = models.TextField()
-    phone_mobile = models.IntegerField(max_length=10, null=False)
+    phone_mobile = models.IntegerField(null=False)
     email = models.EmailField(null=False)
     channel = models.URLField()
     image = models.ImageField()
     bio = models.TextField()
-    about = models.TextChoices()
+    about = models.TextField()
     
          
 class Vlogs(models.Model):
