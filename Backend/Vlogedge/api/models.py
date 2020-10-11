@@ -35,10 +35,17 @@ class Vlogs(models.Model):
     
 class Leads(models.Model):
     id = models.UUIDField(primary_key=True, default= uuid.uuid4, editable=False)
-            
+    college = models.TextField(null=True)
+    name = models.TextField(null=True)
+    email = models.EmailField(null=True)
+    college_email = models.EmailField(null=True)
+    request = models.TextField(null=True) 
+    def __str__(self):
+        return (self.name + " " + self.college)    
     
 class Registrations(models.Model):
     id = models.UUIDField(primary_key=True, default= uuid.uuid4, editable=False)
+    
     
     
 class FAQs(models.Model):
@@ -57,7 +64,10 @@ class Requests(models.Model):
     college = models.TextField()
     name = models.TextField(null=True)
     email = models.EmailField(null=True)
-    college_email = models.EmailField(null=True)
+    file = models.FileField(upload_to='data',default="Null")
     request = models.TextField()
+
+    def __str__(self):
+        return (self.name + " " + self.college)
     
     
