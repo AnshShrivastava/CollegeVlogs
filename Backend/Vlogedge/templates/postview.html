@@ -1,4 +1,4 @@
-{% load static %}
+{% load static %} {% load embed_video_tags %}
 <!DOCTYPE html>
 <html lang="en-US" class="no-js">
 
@@ -12,13 +12,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="pingback" href="xmlrpc.php">
     <link rel="profile" href="https://gmpg.org/xfn/11" />
-    <title>Video post with built-in video player &#8211; Gridlove</title>
+    <title>Vloggage</title>
     <link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
     <link rel='dns-prefetch' href='http://s.w.org/' />
     <link rel="alternate" type="application/rss+xml" title="Gridlove &raquo; Feed" href="indexd784.html?feed=rss2" />
     <link rel="alternate" type="application/rss+xml" title="Gridlove &raquo; Comments Feed" href="indexa6da.html?feed=comments-rss2" />
     <link rel="alternate" type="application/rss+xml" title="Gridlove &raquo; Video post with built-in video player Comments Feed" href="indexd9bb.html?feed=rss2&amp;p=301" />
-    <link rel='stylesheet' id='minit-44d83ea94e0abe521f7da0c24e8c0ea9-css' href={% static 'css/style.css'%} type='text/css' media='all' />
+    <link rel='stylesheet' id='minit-44d83ea94e0abe521f7da0c24e8c0ea9-css' href={% static 'css/style1.css'%} type='text/css' media='all' />
 
     <script type="text/javascript">
         window._wpemojiSettings = {
@@ -175,9 +175,9 @@
         ga('send', 'pageview');
     </script>
     <noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
-    <link rel="icon" href="https://mksdmcdn-9b59.kxcdn.com/gridlove/wp-content/uploads/2016/09/cropped-favicon-100x100.png" sizes="32x32" />
-    <link rel="icon" href="https://mksdmcdn-9b59.kxcdn.com/gridlove/wp-content/uploads/2016/09/cropped-favicon-270x270.png" sizes="192x192" />
-    <link rel="apple-touch-icon" href="https://mksdmcdn-9b59.kxcdn.com/gridlove/wp-content/uploads/2016/09/cropped-favicon-270x270.png" />
+    <link rel="icon" href={% static 'images/favicon.jpg' %} sizes="32x32" />
+    <link rel="icon" href={% static 'images/favicon.jpg' %} sizes="192x192" />
+    <link rel="apple-touch-icon" href={% static 'images/favicon.jpg' %} />
     <meta name="msapplication-TileImage" content="https://mksdmcdn-9b59.kxcdn.com/gridlove/wp-content/uploads/2016/09/cropped-favicon-270x270.png" />
 </head>
 
@@ -193,7 +193,7 @@
                 <div class="gridlove-slot-l">
 
                     <div class="gridlove-site-branding  ">
-                        <span class="site-title h1"><a href="index.html" rel="home"><img class="gridlove-logo" src="https://mksdmcdn-9b59.kxcdn.com/gridlove/wp-content/themes/gridlove/assets/img/gridlove_logo.png" alt="Gridlove"></a></span>
+                        <span class="site-title h1"><a href="index.html" rel="home"><img class="gridlove-logo" src={% static 'images/logo.jpg' %} alt="Gridlove"></a></span>
 
 
                     </div>
@@ -246,7 +246,7 @@
                 <div class="gridlove-slot-l">
 
                     <div class="gridlove-site-branding  ">
-                        <span class="site-title h1"><a href="index.html" rel="home"><img class="gridlove-logo" src="https://mksdmcdn-9b59.kxcdn.com/gridlove/wp-content/themes/gridlove/assets/img/gridlove_logo.png" alt="Gridlove"></a></span>
+                        <span class="site-title h1"><a href="index.html" rel="home"><img class="gridlove-logo" src={% static 'images/logo.jpg' %} alt="Gridlove"></a></span>
 
 
                     </div>
@@ -433,7 +433,7 @@
         <div class="container">
 
             <div class="gridlove-site-branding mini">
-                <span class="site-title h1"><a href="index.html" rel="home"><img class="gridlove-logo-mini" src="https://mksdmcdn-9b59.kxcdn.com/gridlove/wp-content/themes/gridlove/assets/img/gridlove_logo_mini.png" alt="Gridlove"></a></span>
+                <span class="site-title h1"><a href="index.html" rel="home"><img class="gridlove-logo-mini" src={% static 'images/logo.jpg' %} alt="Gridlove"></a></span>
             </div>
 
             <ul class="gridlove-actions gridlove-menu">
@@ -476,27 +476,30 @@
                 <article id="post-301" class="gridlove-box box-vm post-301 post type-post status-publish format-video has-post-thumbnail hentry category-technology post_format-post-format-video">
 
                     <div class="entry-media">
-                        <figure class="wp-block-video"><video controls src="http://techslides.com/demos/sample-videos/small.mp4" height="550px"></video></figure>
+                        {% comment %} <figure class="wp-block-video"><video controls src="{{data.video}}" height="550px"></video></figure> {% endcomment %}
+                        {% comment %} <iframe width="100% " height="550px" src="{{data.video}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> {% endcomment %}
+                        {% video data.video as my_video %}
+                        <iframe width="100% " height="600px" src="{{my_video.url}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                        
+                        {% endvideo %}
                     </div>
-
 
 
 
                     <div class="box-inner-p-bigger box-single">
 
                         <div class="entry-header">
-                            <div class="entry-category">
+                            {% comment %} <div class="entry-category">
 
-                                <a href="index2ac0.html?cat=73" class="gridlove-cat gridlove-cat-73">Technology</a> </div>
+                                <a href="index2ac0.html?cat=73" class="gridlove-cat gridlove-cat-73">Technology</a> </div> {% endcomment %}
 
-                            <h1 class="entry-title">Video post with built-in video player</h1>
+                            <h1 class="entry-title">{{data.title}}</h1>
                             <div class="entry-meta">
                                 <div class="meta-item meta-author">
-                                    <div class="coauthors"><span class="vcard author"><span class="fn"><a href="https://demo.mekshq.com/gridlove?author_name=meks1"><img alt='' src='https://mksdmcdn-9b59.kxcdn.com/gridlove/wp-content/uploads/2016/09/avatar_user_3_1473333938-24x24.jpg' class='avatar avatar-24 photo' height='24' width='24' />Patricia Callahan</a></span></span>
+                                    <div class="coauthors"><span class="vcard author"><span class="fn"><a href=""><img alt='' src={{data.vlogger_id.image.url}} class='avatar avatar-24 photo' height='24' width='24' />{{data.vlogger_id.name}}</a></span></span>
                                     </div>
                                 </div>
                                 <div class="meta-item meta-date"><span class="updated">2 months ago</span></div>
-                                <div class="meta-item meta-views"><span class="updated">200 views</span></div>
+                                <div class="meta-item meta-views"><span class="updated">{{data.views}}</span></div>
                                 <div class="meta-item meta-rtime">4 min read</div>
                             </div>
 
@@ -505,57 +508,7 @@
 
 
                         <div class="entry-content">
-
-
-
-
-
-                            <p>Hoodie High Life yr, leggings ethical next level bitters authentic gluten-free Bushwick Marfa trust fund. Slow-carb 8-bit Helvetica artisan ugh meggings. Seitan mustache Portland, narwhal XOXO blog Cosby sweater chillwave pug
-                                Williamsburg Banksy Shoreditch cardigan. Ugh whatever cred pork belly 90&#8217;s fashion axe, synth Odd Future wayfarers lomo narwhal irony mlkshk fap. Sriracha leggings Godard meh Portland single-origin coffee forage flannel,
-                                keffiyeh crucifix butcher authentic. Leggings umami PBR&amp;B, aesthetic gastropub mlkshk church-key. Umami photo booth kitsch Pinterest, hashtag PBR&amp;B Intelligentsia leggings swag narwhal Bushwick.</p>
-
-
-
-                            <p>Lomo sriracha chillwave letterpress small batch, Schlitz Pitchfork viral hashtag swag 8-bit skateboard pour-over. Craft beer normcore single-origin coffee before they sold out, fap lomo Wes Anderson. Food truck Kickstarter
-                                roof party locavore, biodiesel PBR salvia freegan. Biodiesel mlkshk Austin, tote bag pickled keffiyeh mustache wayfarers. Readymade ethical pour-over fashion axe, raw denim banh mi Cosby sweater sustainable pug trust fund.
-                                Banjo messenger bag pop-up YOLO, Bushwick mustache Thundercats kitsch PBR&amp;B mixtape mumblecore iPhone deep v yr. Keffiyeh whatever Etsy normcore tofu mumblecore.</p>
-
-
-
-                            <p>Kickstarter post-ironic before they sold out Tumblr master cleanse, synth jean shorts ethnic kale chips banjo. Chillwave literally Wes Anderson tousled jean shorts. Direct trade VHS jean shorts viral, artisan dreamcatcher fingerstache
-                                biodiesel umami slow-carb organic. Normcore ugh authentic mlkshk hoodie leggings. Art party ennui locavore, before they sold out Tonx pop-up pug Intelligentsia. Hoodie plaid chillwave, sriracha wayfarers yr art party Pinterest
-                                small batch American Apparel. Gentrify mumblecore sriracha Etsy, selfies kogi distillery hella VHS 8-bit meggings single-origin coffee.</p>
-
-
-
-                            <p>Ethical butcher sriracha, biodiesel vegan Blue Bottle pickled aesthetic hella master cleanse next level cardigan. Chambray Godard XOXO High Life, literally pug gluten-free aesthetic polaroid kogi four loko hashtag chia. Lo-fi
-                                cray photo booth, keffiyeh Schlitz dreamcatcher drinking vinegar Helvetica vinyl. Banksy Tumblr fap, Williamsburg sriracha Odd Future squid 90&#8217;s mustache. Ennui hoodie church-key Etsy you probably haven&#8217;t heard
-                                of them, roof party XOXO artisan. Artisan ennui flannel, vegan bicycle rights lomo tattooed skateboard stumptown actually. Williamsburg single-origin coffee deep v PBR&amp;B DIY, you probably haven&#8217;t heard of them
-                                polaroid Etsy Truffaut cred artisan post-ironic.</p>
-
-
-
-                            <p>Before they sold out ethical tofu, stumptown +1 viral banjo forage you probably haven&#8217;t heard of them farm-to-table Schlitz pork belly. Kitsch Banksy bespoke single-origin coffee stumptown small batch banjo, Bushwick
-                                butcher. Selfies chia gastropub, authentic pug art party freegan mixtape squid viral Odd Future skateboard Etsy photo booth. Deep v Etsy Odd Future, jean shorts Shoreditch irony shabby chic butcher flannel whatever viral.
-                                McSweeney&#8217;s messenger bag readymade post-ironic gentrify jean shorts. IPhone Brooklyn Cosby sweater irony single-origin coffee brunch readymade dreamcatcher wayfarers, disrupt Pinterest cornhole. Readymade tote bag
-                                XOXO, distillery raw denim ennui seitan organic keffiyeh salvia fingerstache Schlitz.</p>
-
-
-
-                            <p>Kickstarter post-ironic before they sold out Tumblr master cleanse, synth jean shorts ethnic kale chips banjo. Chillwave literally Wes Anderson tousled jean shorts. Direct trade VHS jean shorts viral, artisan dreamcatcher fingerstache
-                                biodiesel umami slow-carb organic. Normcore ugh authentic mlkshk hoodie leggings. Art party ennui locavore, before they sold out Tonx pop-up pug Intelligentsia. Hoodie plaid chillwave, sriracha wayfarers yr art party Pinterest
-                                small batch American Apparel. Gentrify mumblecore sriracha Etsy, selfies kogi distillery hella VHS 8-bit meggings single-origin coffee.</p>
-
-
-
-                            <p>Ethical butcher sriracha, biodiesel vegan Blue Bottle pickled aesthetic hella master cleanse next level cardigan. Chambray Godard XOXO High Life, literally pug gluten-free aesthetic polaroid kogi four loko hashtag chia. Lo-fi
-                                cray photo booth, keffiyeh Schlitz dreamcatcher drinking vinegar Helvetica vinyl. Banksy Tumblr fap, Williamsburg sriracha Odd Future squid 90&#8217;s mustache. Ennui hoodie church-key Etsy you probably haven&#8217;t heard
-                                of them, roof party XOXO artisan. Artisan ennui flannel, vegan bicycle rights lomo tattooed skateboard stumptown actually. Williamsburg single-origin coffee deep v PBR&amp;B DIY, you probably haven&#8217;t heard of them
-                                polaroid Etsy Truffaut cred artisan post-ironic.</p>
-
-
-
-
+                            {{data.content}}
                         </div>
 
 
@@ -564,12 +517,12 @@
                         <div class="gridlove-author">
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 col-sm-5">
-                                    <img alt='' src='https://mksdmcdn-9b59.kxcdn.com/gridlove/wp-content/uploads/2016/09/avatar_user_3_1473333938-100x100.jpg' srcset="https://mksdmcdn-9b59.kxcdn.com/gridlove/wp-content/uploads/2016/09/avatar_user_3_1473333938-200x200.jpg 2x" class='avatar avatar-100 photo'
+                                    <img alt='' src={{data.vlogger_id.image.url}} srcset="{{data.vlogger_id.image}} 2x" class='avatar avatar-100 photo'
                                         height='100' width='100' /> </div>
                                 <div class="col-lg-10 col-md-10 col-sm-12">
-                                    <h4>Patricia Callahan</h4>
+                                    <h4>{{data.vlogger_id.name}}</h4>
                                     <div class="gridlove-author-desc">
-                                        <p>This is an example of author bio/description. Beard fashion axe trust fund, post-ironic listicle scenester. Uniquely mesh maintainable users rather than plug-and-play testing procedures.</p>
+                                        <p>{{data.vlogger_id.bio}}</p>
                                     </div>
                                     <div class="gridlove-author-links">
                                         <a href="https://demo.mekshq.com/gridlove?author_name=meks1" class="gridlove-pill pill-large">View all posts</a>

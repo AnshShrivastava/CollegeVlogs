@@ -6,10 +6,10 @@ $(document).on('submit','#request-form',function(e){
         url:'newrequest',
         data:{
             name : $('#name').val(),
-            email : $('#email').val(),
-            myfile : $('#file').val(),
             collegename : $('#collegename').val(),
+            email : $('#email').val(),
             requests : $('#requests').val(),
+            filenew : $('#filenew').val(),
             csrfmiddlewaretoken : $('input[name=csrfmiddlewaretoken]').val()
         },
 

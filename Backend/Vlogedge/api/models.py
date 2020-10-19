@@ -1,13 +1,19 @@
 from django.db import models
+from embed_video.fields import EmbedVideoField
 import uuid
+
 
 
 class College(models.Model):
     id = models.UUIDField(primary_key=True, default= uuid.uuid4, editable=False)
+    collegename = models.TextField(default="")
     video = models.URLField(null=False)
     description = models.TextField()
     banner = models.ImageField()
     location = models.TextField()
+
+    def __str__(self):
+        return self.collegename
     
 class Vlogger(models.Model):
     id = models.UUIDField(primary_key=True, default= uuid.uuid4, editable=False)
@@ -21,6 +27,9 @@ class Vlogger(models.Model):
     image = models.ImageField()
     bio = models.TextField()
     about = models.TextField()
+
+    def __str__(self):
+        return self.name
     
          
 class Vlogs(models.Model):
@@ -29,9 +38,13 @@ class Vlogs(models.Model):
     vlogger_id = models.ForeignKey('Vlogger', on_delete=models.CASCADE)
     title = models.TextField()
     content = models.TextField()
-    video = models.URLField()
+    # video = models.URLField()
+    video = EmbedVideoField()
     banner = models.ImageField()
     views = models.IntegerField()
+
+    def __str__(self):
+        return self.vlogger_id.name + " - " + self.college_id.collegename
     
 class Leads(models.Model):
     id = models.UUIDField(primary_key=True, default= uuid.uuid4, editable=False)
@@ -68,6 +81,4 @@ class Requests(models.Model):
     request = models.TextField()
 
     def __str__(self):
-        return (self.name + " " + self.college)
-    
-    
+        return (self.name + " - " + self.college)

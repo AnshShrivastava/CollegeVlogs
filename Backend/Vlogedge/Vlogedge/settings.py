@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'api',
     'frontend',
+    'embed_video',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
