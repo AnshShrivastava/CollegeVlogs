@@ -31,4 +31,4 @@ jobs:
       with:
         app-name: 'vloggage'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_f724a41d72764269804cf3f75cce0d6c }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_230377d163e74043a33a4072143ee049 }}
