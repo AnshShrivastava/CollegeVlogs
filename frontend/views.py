@@ -58,8 +58,9 @@ class search(views.APIView):
 
     def get(self,request):
         string = request.GET['search']
-        data = College.objects.annotate(search=SearchVector('collegename','vlogs__title')).filter(search=string).distinct()
+        data = College.objects.filter(collegename__contains=string).distinct()
+        # vlog = Vlogs.objects.filter(college_id__in = Vlogs.objects.values('college_id'))
         serializer = CollegeSerializer(data=data)
         serializer.is_valid()
-        print(serializer.collegename)
+        print(serializer['collegename'])
         return render(request,'searchresult.html')
