@@ -26,6 +26,18 @@ def leads(request):
 
     return render(request,"contact-us.html")
 
+def institutes(request):
+    # if request.method=="POST":
+    #     name = request.POST["name"]
+    #     email = request.POST["email"]
+    #     collegeemail = request.POST["collegeemail"]
+    #     collegename = request.POST["collegename"]
+    #     request = request.POST["request"]        
+    #     lead = Leads(name=name,college=collegename,email=email,college_email=collegeemail,request=request)
+    #     lead.save()
+
+    return render(request,"institutes.html")
+
 def newrequest(request):
     if request.method=="POST":
         name = request.POST["name"]
