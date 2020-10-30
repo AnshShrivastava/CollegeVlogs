@@ -188,7 +188,9 @@
                 <div class="gridlove-slot-l">
 
                     <div class="gridlove-site-branding  ">
-                        <span class="site-title h1"><a href="home" rel="home"><img class="gridlove-logo" src={% static 'images/logo.jpg' %} alt="Gridlove"></a></span>
+                        <h1 class="site-title h1">
+                            <a href="home" rel="home"><img class="gridlove-logo" src={% static 'images/logo.jpg' %} alt="Vloggage"></a>
+                        </h1>
 
 
                     </div>
@@ -197,97 +199,49 @@
 
                 <div class="gridlove-slot-r">
                     <nav class="gridlove-main-navigation">
-                        <ul id="menu-gridlove-main" class="gridlove-main-nav gridlove-menu">
-                            <li id="menu-item-2156" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-207 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-2156"><a href="index.html" aria-current="page">Home</a>
-                            </li>
-                            <li id="menu-item-1884" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1884"><a href="#">Institutes</a>
-                                <ul class="sub-menu">
-                                    <li id="menu-item-2026" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2026"><a href="index7df0.html?page_id=2023">Vlogs</a></li>
-                                    <li id="menu-item-2286" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2286"><a href="index112a.html?page_id=2281">Queries</a></li>
-                                </ul>
-                            </li>
-                            <li id="menu-item-1885" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1885"><a href="#">Vloggers</a>
-                            </li>
-                            <li id="menu-item-1886" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1886"><a href="#">Careers</a>
-                            </li>
-                            <li id="menu-item-1887" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1887"><a href="aboutus">About Us</a>
-                            </li>
-                            <li id="menu-item-2119" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2119"><a href="contactus">Ask a Question</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <ul class="gridlove-actions gridlove-menu">
-                        <li class="gridlove-actions-button gridlove-action-search">
-                            <span>
-		<i class="fa fa-search"></i>
-	</span>
-                            <ul class="sub-menu">
-                                <li>
-                                    <form class="gridlove-search-form" action="https://demo.mekshq.com/gridlove/" method="get"><input name="s" type="text" value="" placeholder="Type here to search..." /><button type="submit" class="gridlove-button-search">Search</button></form>
+                        <div id="gridlove-slot-r">
+                            <ul id="menu-gridlove-main" class="gridlove-main-nav gridlove-menu">
+                                <li id="menu-item-2156" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-207 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-2156"><a href="home" aria-current="page">Home</a>
+                                </li>
+                                <li id="menu-item-1884" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1884"><a href="institutes">Institutes</a>
+                                    <ul class="sub-menu">
+                                        <li id="menu-item-2026" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2026"><a href="vloglist">Vlogs</a></li>
+                                        <!-- <li id="menu-item-2286" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2286"><a href="index112a.html?page_id=2281">Queries</a></li> -->
+                                    </ul>
+                                </li>
+                                <li id="menu-item-1885" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1885"><a href="vloggers">Vloggers</a>
+                                </li>
+                                <li id="menu-item-1886" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1886"><a href="home#career">Careers</a>
+                                </li>
+                                <li id="menu-item-1887" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1887"><a href="about">About Us</a>
+                                </li>
+                                <li id="menu-item-2119" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2119"><a href="contact">Ask a Question</a>
                                 </li>
                             </ul>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-
-
-        <div id="gridlove-header-sticky" class="gridlove-header-sticky">
-            <div class="container">
-
-                <div class="gridlove-slot-l">
-
-                    <div class="gridlove-site-branding  ">
-                        <span class="site-title h1"><a href="index.html" rel="home"><img class="gridlove-logo" src={% static 'images/logo.jpg' %} alt="Gridlove"></a></span>
-
-
+                        </div>
+                    </nav>
+                    <div>
+                        <ul class="gridlove-actions gridlove-menu">
+                            <li class="gridlove-actions-button gridlove-action-search">
+                                <span><i class="fa fa-search"></i></span>
+                                <ul class="sub-menu">
+                                    <li>
+                                        <form class="gridlove-search-form" action="search1" method="get">
+                                            <input name="search" type="text" value="" class="gridlove-button-search" placeholder="Type here to search..." />
+                                            <button type="submit" class="gridlove-button-search">Search</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
-
                 </div>
-                <div class="gridlove-slot-r">
-                    <nav class="gridlove-main-navigation">
-                        <ul id="menu-gridlove-main" class="gridlove-main-nav gridlove-menu">
-                            <li id="menu-item-2156" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-207 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-2156"><a href="index.html" aria-current="page">Home</a>
-                            </li>
-                            <li id="menu-item-1884" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1884"><a href="#">Institutes</a>
-                                <ul class="sub-menu">
-                                    <li id="menu-item-2026" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2026"><a href="index7df0.html?page_id=2023">Vlogs</a></li>
-                                    <li id="menu-item-2286" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2286"><a href="index112a.html?page_id=2281">Queries</a></li>
-                                </ul>
-                            </li>
-                            <li id="menu-item-1885" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1885"><a href="#">Vloggers</a>
-                            </li>
-                            <li id="menu-item-1886" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1886"><a href="#">Careers</a>
-                            </li>
-                            <li id="menu-item-1887" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1887"><a href="aboutus">About Us</a>
-                            </li>
-                            <li id="menu-item-2119" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2119"><a href="contactus">Ask a Question</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <ul class="gridlove-actions gridlove-menu">
-                        <li class="gridlove-actions-button gridlove-action-search">
-                            <span>
-		<i class="fa fa-search"></i>
-	</span>
-                            <ul class="sub-menu">
-                                <li>
-                                    <form class="gridlove-search-form" action="https://demo.mekshq.com/gridlove/" method="get"><input name="s" type="text" value="" placeholder="Type here to search..." /><button type="submit" class="gridlove-button-search">Search</button></form>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="gridlove-actions-button">
-                            <span class="gridlove-sidebar-action">
-		<i class="fa fa-bars"></i>
-	</span>
-                        </li>
-                    </ul>
 
-                </div>
             </div>
         </div>
+
+
+
 
 
     </header>
@@ -297,25 +251,25 @@
         <div class="container">
 
             <div class="gridlove-site-branding mini">
-                <span class="site-title h1"><a href="index.html" rel="home"><img class="gridlove-logo-mini" src={% static 'images/logo.jpg' %} alt="Gridlove"></a></span>
+                <span class="site-title h1"><a href="home" rel="home"><img class="gridlove-logo-mini" src={% static 'images/logo.jpg' %} alt="Vloggage"></a></span>
             </div>
 
             <ul class="gridlove-actions gridlove-menu">
 
                 <li class="gridlove-actions-button gridlove-action-search">
                     <span>
-		<i class="fa fa-search"></i>
-	</span>
+		                <i class="fa fa-search"></i>
+	                </span>
                     <ul class="sub-menu">
                         <li>
-                            <form class="gridlove-search-form" action="https://demo.mekshq.com/gridlove/" method="get"><input name="s" type="text" value="" placeholder="Type here to search..." /><button type="submit" class="gridlove-button-search">Search</button></form>
+                            <form class="gridlove-search-form" action="search1" method="get"><input name="search" type="text" value="" placeholder="Type here to search..." /><button type="submit" class="gridlove-button-search">Search</button></form>
                         </li>
                     </ul>
                 </li>
                 <li class="gridlove-actions-button">
                     <span class="gridlove-sidebar-action">
-		<i class="fa fa-bars"></i>
-	</span>
+					    <i class="fa fa-bars"></i>
+				    </span>
                 </li>
 
 
