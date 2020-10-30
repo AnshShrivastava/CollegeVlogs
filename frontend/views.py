@@ -38,7 +38,7 @@ def newrequest(request):
         req = Requests(name=name,college=collegename,email=email,file=fs.url(filename),request=requests)
         req.save()
         
-    return render(request,"index.html",)
+    return HttpResponse("Done");
 
 
 def about_us(request):
