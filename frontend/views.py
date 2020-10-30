@@ -62,5 +62,5 @@ class search(views.APIView):
         # vlog = Vlogs.objects.filter(college_id__in = Vlogs.objects.values('college_id'))
         serializer = CollegeSerializer(data=data)
         serializer.is_valid()
-        print(serializer['collegename'])
+        # print(serializer['collegename'])
         return render(request,'searchresult.html')
