@@ -57,8 +57,9 @@ def about_us(request):
 
 def vlogs(request):
     vlog_id = request.GET.get('vlog_id')
-    v = Vlogs.objects.get(id=vlog_id) 
-    return render(request,'postview.html',{'data':v})
+    v = Vlogs.objects.get(id=vlog_id)
+    url = v['video'].replace("http://", "https://") 
+    return render(request,'postview.html',{'data':v, 'videourl': url})
 
 def layout(request):
     return render(request,'layouts.html')
