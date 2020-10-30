@@ -3,7 +3,10 @@ from api.models import *
 from rest_framework import views
 from django.core.files.storage import FileSystemStorage
 from django.conf import settings
+from django.contrib.postgres.search import SearchVector
 from django.http import HttpResponse
+from api.serializers import *
+
 # Create your views here.
 
 def home(request):
@@ -50,4 +53,13 @@ def layout(request):
     return render(request,'layouts.html')
 
 class search(views.APIView):
-    pass
+    model = Vlogs,Vlogger,College
+    serializer = VlogSerializer,VloggerSerializer,CollegeSerializer
+
+    def get(self,request):
+        string = request.GET['search']
+        data = College.objects.annotate(search=SearchVector('collegename','vlogs__title')).filter(search=string).distinct()
+        serializer = CollegeSerializer(data=data)
+        serializer.is_valid()
+        print(serializer.collegename)
+        return render(request,'searchresult.html')
