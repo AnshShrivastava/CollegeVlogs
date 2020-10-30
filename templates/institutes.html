@@ -297,7 +297,7 @@
                     <article class="gridlove-post gridlove-post-b gridlove-box  post-182 post type-post status-publish format-standard has-post-thumbnail hentry category-technology">
 
                         <div class="entry-image">
-                            <a href="#" title="{{ data.collegename }}"><img width="385" height="300" src="" class="attachment-gridlove-b8 size-gridlove-b8 wp-post-image" alt="" />{{%% }}</a>
+                            <a href="#" title="{{ data.collegename }}"><img width="385" height="300" src="{{ data.banner.url }}" class="attachment-gridlove-b8 size-gridlove-b8 wp-post-image" alt="" /></a>
                         </div>
 
                         <div class="box-inner-ptbr box-col-b entry-sm-overlay">
@@ -307,9 +307,9 @@
                                     <!-- <a href="" class="gridlove-cat gridlove-cat-73">Technology</a>  -->
                                 </div>
 
-                                <h2 class="entry-title h3"><a href="#">{{% data.collegename %}}</a></h2>
+                                <h2 class="entry-title h3"><a href="#">{{ data.collegename }}</a></h2>
                                 <div class="entry-content">
-                                    <p>{{% data.description %}}</p>
+                                    <p>{{ data.description }}</p>
                                 </div>
 
                             </div>
