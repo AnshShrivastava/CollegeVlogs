@@ -10,6 +10,7 @@ urlpatterns = [
     path("institutes",views.institutes,name="Institutes"),
     path("vloggers",views.vloggers,name="Vloggers"),
     path("vlogs",views.vlogs,name="Vlogs"),
+    path("vloglist",views.vloglist,name="Vlogs"),
     path("layout",views.layout,name="layout"),
     path('search1',views.search.as_view(),name='Search'),
 ]
