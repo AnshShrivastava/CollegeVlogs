@@ -39,6 +39,7 @@ class Vlogs(models.Model):
     title = models.TextField()
     content = models.TextField()
     # video = models.URLField()
+    vlogurl = models.URLField(null=True)
     video = EmbedVideoField()
     banner = models.ImageField()
     views = models.IntegerField()
