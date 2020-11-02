@@ -14,6 +14,11 @@ def home(request):
 
     return render(request,'index.html',{'info': data})
 
+def test(request):
+    data = Vlogs.objects.all()
+
+    return render(request,'home.html',{'info': data})
+
 def leads(request):
     # if request.method=="POST":
     #     name = request.POST["name"]
