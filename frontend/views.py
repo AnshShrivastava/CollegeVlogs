@@ -72,6 +72,14 @@ def vlogs(request):
 def layout(request):
     return render(request,'layouts.html')
 
+def college(request):
+    college_id = request.GET.get('id')
+    vlog = Vlogs.objects.get(college_id=college_id)
+    college = College.objects.get(id=college_id)
+    return render(request,'postview.html',{'college':college, 'vlogs': vlog})
+    
+    
+
 class search(views.APIView):
     model = Vlogs,Vlogger,College
     serializer = VlogSerializer,VloggerSerializer,CollegeSerializer

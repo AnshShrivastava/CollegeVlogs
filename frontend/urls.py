@@ -14,4 +14,5 @@ urlpatterns = [
     path("vloglist",views.vloglist,name="Vlogs"),
     path("layout",views.layout,name="layout"),
     path('search1',views.search.as_view(),name='Search'),
+    path('college', views.college, name="College"),
 ]
