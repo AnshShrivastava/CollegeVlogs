@@ -76,7 +76,7 @@ def college(request):
     college_id = request.GET.get('id')
     vlog = Vlogs.objects.get(college_id=college_id)
     college = College.objects.get(id=college_id)
-    return render(request,'postview.html',{'college':college, 'vlogs': vlog})
+    return render(request,'college-layout.html',{'college':college, 'vlogs': vlog})
     
     
 
