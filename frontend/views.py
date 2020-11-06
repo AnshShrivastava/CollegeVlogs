@@ -85,10 +85,10 @@ class search(views.APIView):
     serializer = VlogSerializer,VloggerSerializer,CollegeSerializer
 
     def get(self,request):
-        string = request.GET['search']
-        data = College.objects.filter(collegename__contains=string).distinct()
+        srch = request.GET['search']
+        data1 = College.objects.filter(collegename__contains=srch).distinct()
         # vlog = Vlogs.objects.filter(college_id__in = Vlogs.objects.values('college_id'))
-        serializer = CollegeSerializer(data=data)
-        serializer.is_valid()
+        data2 = Vlogs.objects.filter(title__contains=srch).distinct()
+        data = (data1 | data2).distinct()
         # print(serializer['collegename'])
-        return render(request,'searchresult.html')
+        return render(request,'searchresult.html', {'vlogs': data, 'query' : srch} )
