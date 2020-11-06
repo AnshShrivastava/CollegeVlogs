@@ -37,7 +37,8 @@ def institutes(request):
 
 def vloggers(request):
     data = Vlogger.objects.all()
-    return render(request,'vloggers.html',{'info': data})
+    ad = Advertisement.objects.all()
+    return render(request,'vloggers.html',{'info': data, 'ad': ad})
                   
 def vloglist(request):
     data = Vlogs.objects.all()
@@ -60,14 +61,16 @@ def newrequest(request):
 
 
 def about_us(request):
-    return render(request,'about-us.html')
+    ad = Advertisement.objects.all()
+    return render(request,'about-us.html', {'ad': ad})
 
 def vlogs(request):
     vlog_id = request.GET.get('vlog_id')
     v = Vlogs.objects.get(id=vlog_id)
     url = v.video
     url.replace("http:", "https:")
-    return render(request,'postview.html',{'data':v, 'videourl': url})
+    ad = Advertisement.objects.all()
+    return render(request,'postview.html',{'data':v, 'videourl': url, 'ad': ad})
 
 def layout(request):
     return render(request,'layouts.html')
@@ -76,7 +79,8 @@ def college(request):
     college_id = request.GET.get('id')
     vlog = Vlogs.objects.filter(college_id=college_id)
     college = College.objects.get(id=college_id)
-    return render(request,'college-layout.html',{'college':college, 'vlogs': vlog})
+    ad = Advertisement.objects.all()
+    return render(request,'college-layout.html',{'college':college, 'vlogs': vlog, 'ad': ad})
     
     
 
