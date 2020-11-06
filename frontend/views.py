@@ -86,7 +86,7 @@ class search(views.APIView):
 
     def get(self,request):
         srch = request.GET['search']
-        data1 = Vlogs.objects.filter(college_id__collegename__contains=srch).distinct()
-        data2 = Vlogs.objects.filter(title__contains=srch).distinct()
+        data1 = Vlogs.objects.filter(college_id__collegename__icontains=srch)
+        data2 = Vlogs.objects.filter(title__icontains=srch)
         data = (data1 | data2).distinct()
-        return render(request,'searchresult.html', {'vlogs': data, 'query' : srch} )
+        return render(request,'searchresult.html', {'vlogs': data2, 'query' : srch} )
