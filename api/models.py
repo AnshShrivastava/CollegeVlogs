@@ -83,3 +83,10 @@ class Requests(models.Model):
 
     def __str__(self):
         return (self.name + " - " + self.college)
+    
+class Advertisement(models.Model):
+    id = models.UUIDField(primary_key=True, default= uuid.uuid4, editable=False)
+    name = models.TextField()
+    description = models.TextField()
+    url = models.URLField()
+    banner = models.ImageField()

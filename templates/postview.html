@@ -421,22 +421,25 @@
 
             <div class="gridlove-sidebar" style="height: auto; min-height: 1px;">
 
+
                 <div id="gridlove_category_widget-6" class="widget gridlove-box gridlove_category_widget">
                     <h4 class="widget-title">Sponsored</h4>
+
+                    {% for data in ad %}
                     <div id="product-placement" style="padding: 10%;">
                         <div id="product-image">
-                            <a href="https://www.amazon.in/Never-Date-Senior-Girl-Siddarth/dp/B089SXM9DC" target="_blank">
-                                <img src="{% static 'images/book.jpeg' %}" width="300" height="300">
+                            <a href="{{ data.url }}" target="_blank">
+                                <img src="{{ data.banner.url }}" width="300" height="300">
                             </a>
                         </div>
                         <div id="product-name">
-                            <a href="https://www.amazon.in/Never-Date-Senior-Girl-Siddarth/dp/B089SXM9DC" target="_blank">
-                                <h5 style="margin: 0;">Never Date a Senior Girl</h5>
-                                <p style="margin: 0; color: black;">Sample text about the book. Mainly, a brief description of what the book has to offer.</p>
+                            <a href="{{ data.url }}" target="_blank">
+                                <h5 style="margin: 0;">{{ data.name }}</h5>
+                                <p style="margin: 0; color: black;">{{ data.description }}</p>
                             </a>
                         </div>
                     </div>
-
+                    {% endfor %}
                 </div>
 
 
