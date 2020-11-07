@@ -14,7 +14,7 @@ $(document).on('submit','#request-form',function(e){
         },
 
         success:function () {
-            alert("Data added")
+            alert("Data added");
             $("#request-form")[0].reset();       
         }
     });

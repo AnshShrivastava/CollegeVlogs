@@ -14,7 +14,7 @@ $(document).on('submit','#leads-form',function(e){
         },
 
         success:function () {
-            alert("Request send...")
+            alert("Request send...");
             $("#leads-form")[0].reset();
         }
     });
