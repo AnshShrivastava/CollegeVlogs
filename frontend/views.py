@@ -29,10 +29,10 @@ def leads(request):
         lead = Leads(name=name,college=collegename,email=email,college_email=collegeemail,request=request)
         lead.save()
         status = "true"
-        return render(request, 'contact-us.html', {'status' : status})
+        # eturn render(request, 'contact-us.html', {'status' : status})
     else:
-        status = "true"
-        return render(request,'contact-us.html', {'status': status})
+        status = "false"
+    return render(request,'contact-us.html', {'status': status})
 
 def institutes(request):
     data = College.objects.all()
