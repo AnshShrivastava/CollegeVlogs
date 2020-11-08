@@ -59,8 +59,7 @@ def newrequest(request):
         filename = fs.save(filenew.name, filenew) 
         req = Requests(name=name,college=collegename,email=email,file=fs.url(filename),request=requests)
         req.save()
-        
-    return render(request, 'index.html')
+    return redirect('thank')
 
 
 def about_us(request):
@@ -86,7 +85,8 @@ def college(request):
     return render(request,'college-layout.html',{'college':college, 'vlogs': vlog, 'ad': ad})
 
 def thank(request):
-    return render(request, 'thank.html')
+    ad = Advertisement.objects.all()
+    return render(request, 'thank.html', {'ad': ad})
     
 class search(views.APIView):
     model = Vlogs,Vlogger,College
