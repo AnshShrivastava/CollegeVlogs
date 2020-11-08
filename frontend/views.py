@@ -82,8 +82,6 @@ def college(request):
     ad = Advertisement.objects.all()
     return render(request,'college-layout.html',{'college':college, 'vlogs': vlog, 'ad': ad})
     
-    
-
 class search(views.APIView):
     model = Vlogs,Vlogger,College
     serializer = VlogSerializer,VloggerSerializer,CollegeSerializer
