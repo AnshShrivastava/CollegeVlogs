@@ -29,7 +29,7 @@ def leads(request):
         lead = Leads(name=name,college=collegename,email=email,college_email=collegeemail,request=request)
         lead.save()
         status = "true"
-        return redirect('leads')
+        return HttpResponse("Okay")
     else:
         status = "false"
         return render(request,'contact-us.html', {'status': status})
