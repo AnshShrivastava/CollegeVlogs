@@ -489,10 +489,9 @@
 
     {% comment %} {% endcomment %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script>
-        $(document).on('submit', '#request-form', function(e) {
+    <!-- <script>
+        $("#request-form").on('submit', function(e) {
             e.preventDefault();
-
             $.ajax({
                 type: 'POST',
                 url: 'newrequest',
@@ -513,7 +512,7 @@
                 }
             });
         });
-    </script>
+    </script> -->
     <script type='text/javascript' src={% static 'js/jqmigratev1.4.1.js' %}></script>
     <script type='text/javascript' src={% static 'js/search.js' %}></script>
     <script type='text/javascript' src='https://mksdmcdn-9b59.kxcdn.com/gridlove/wp-content/uploads/minit/17739eb14bee8b3ef3b673257d25f0bf.js'></script>

@@ -28,8 +28,8 @@ def leads(request):
         request = request.POST["request"]        
         lead = Leads(name=name,college=collegename,email=email,college_email=collegeemail,request=request)
         lead.save()
-        
-        return render(request, 'contact-us.html', {'status' : True})
+        status = True
+        return render(request, 'contact-us.html', {'status' : 'true'})
     else:
         return render(request,'contact-us.html')
 
