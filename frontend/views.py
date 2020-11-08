@@ -29,7 +29,7 @@ def leads(request):
         lead = Leads(name=name,college=collegename,email=email,college_email=collegeemail,request=request)
         lead.save()
 
-    return redirect("contact-us.html")
+    return render(request,"contact-us.html")
 
 def institutes(request):
     data = College.objects.all()
