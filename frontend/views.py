@@ -29,7 +29,7 @@ def leads(request):
         lead = Leads(name=name,college=collegename,email=email,college_email=collegeemail,request=request)
         lead.save()
         status = "true"
-        return HttpResponse("Okay")
+        return redirect('thank')
     else:
         status = "false"
         return render(request,'contact-us.html', {'status': status})
@@ -84,6 +84,9 @@ def college(request):
     college = College.objects.get(id=college_id)
     ad = Advertisement.objects.all()
     return render(request,'college-layout.html',{'college':college, 'vlogs': vlog, 'ad': ad})
+
+def thank(request):
+    return render(request, 'thank.html')
     
 class search(views.APIView):
     model = Vlogs,Vlogger,College
