@@ -31,7 +31,8 @@ def leads(request):
         status = "true"
         return render(request, 'contact-us.html', {'status' : status})
     else:
-        return render(request,'contact-us.html')
+        status = "true"
+        return render(request,'contact-us.html', {'status': status})
 
 def institutes(request):
     data = College.objects.all()
@@ -59,7 +60,7 @@ def newrequest(request):
         req = Requests(name=name,college=collegename,email=email,file=fs.url(filename),request=requests)
         req.save()
         
-    return HttpResponse("Done");
+    return render(request, 'index.html')
 
 
 def about_us(request):
