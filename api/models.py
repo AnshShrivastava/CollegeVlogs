@@ -90,3 +90,17 @@ class Advertisement(models.Model):
     description = models.TextField()
     url = models.URLField()
     banner = models.ImageField()
+    
+class Review(models.Model):
+    id = models.UUIDField(primary_key=True, default= uuid.uuid4, editable=False)
+    college_id = models.ForeignKey('College', on_delete=models.CASCADE)
+    author = models.TextField()
+    title = models.TextField()
+    content = models.TextField()
+    # video = models.URLField()
+    vlogurl = models.URLField(null=True)
+    banner = models.ImageField()
+    views = models.IntegerField()
+
+    def __str__(self):
+        return self.title + " - " + self.author
