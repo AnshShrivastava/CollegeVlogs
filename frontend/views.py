@@ -11,8 +11,8 @@ from api.serializers import *
 
 def home(request):
     data = Vlogs.objects.all()
-
-    return render(request,'index.html',{'info': data})
+    reviews = Review.objects.all()[:9]
+    return render(request,'index.html',{'info': data, 'review': reviews})
 
 def test(request):
     data = Vlogs.objects.all()

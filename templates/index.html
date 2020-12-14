@@ -344,6 +344,60 @@
 
 
         </div>
+
+        <div id="gridlove-module-2" class="gridlove-module module-type-posts  gridlove-module-layout-simple">
+
+            <div class="module-header">
+                <div class="module-title">
+                    <h2>Latest Reviews</h2>
+                </div>
+            </div>
+
+
+
+            <div class="row gridlove-posts ">
+
+
+
+                {% for data in reviews %}
+                <div class="col-lg-4 col-md-6 col-sm-12 layout-simple">
+                    <article class="gridlove-post gridlove-post-a gridlove-box  post-163 post type-post status-publish format-standard has-post-thumbnail hentry category-entertainment tag-blog tag-funk tag-music-2">
+
+                        <div class="entry-image">
+                            <a href="vlogs?vlog_id={{ data.id }}" title="{{data.title}}"><img width="370" height="150" src="{{data.banner.url}}" class="attachment-gridlove-a4 size-gridlove-a4 wp-post-image" alt="" /></a>
+
+                        </div>
+
+
+                        <div class="box-inner-p">
+                            <div class="box-inner-ellipsis">
+                                <h2 class="entry-title h3"><a href="vlogs?vlog_id={{ data.id }}" title="{{data.title}}">{{data.title}}</a></h2>
+                            </div>
+                            <div class="entry-meta">
+                                <div class="meta-item meta-author">
+                                    <div class="coauthors"><span class="vcard author"><span class="fn"><a href="vlogs?vlog_id={{ data.id }}" title="{{data.title}}"><img src='{{data.vlogger_id.image.url}}' height='24' width='24' />{{data.vlogger_id.name}}</a></span></span>
+                                    </div>
+                                </div>
+                                <div class="meta-item meta-date"><span class="updated">{{data.college_id.collegename}}</span></div>
+                            </div>
+                        </div>
+
+                    </article>
+                </div>
+                {% endfor %}
+
+                <div class="col-lg-12 col-md-12 col-sm-12" style="margin-top: 2%">
+                    <a href="http://vloggage.in/contact" title="Find College"><img width="100%" height="250" src="{% static 'images/findcollege.jpg' %}" class="attachment-gridlove-b8 size-gridlove-b8 wp-post-image" alt="" /></a>
+                </div>
+
+
+
+
+            </div>
+
+
+
+        </div>
         <div class="module-header" style="margin-top: 2%">
             <div class="module-title" id="career">
                 <h2>Become a part of Vloggage</h2>
