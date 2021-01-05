@@ -15,5 +15,7 @@ urlpatterns = [
     path("layout",views.layout,name="layout"),
     path('search1',views.search.as_view(),name='Search'),
     path('college', views.college, name="College"),
-    path('thank', views.thank, name="thank")
+    path('thank', views.thank, name="thank"),
+    path('addreview', views.addreview, name="add")
+    
 ]

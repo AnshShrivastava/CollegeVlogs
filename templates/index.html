@@ -13,6 +13,7 @@
     <link rel="pingback" href="xmlrpc.php">
     <link rel="profile" href="https://gmpg.org/xfn/11" />
     <title>Vloggage</title>
+    <meta name="description" content="India's first ever platform to provide college campus tours and reviews.">
     <link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
     <link rel='dns-prefetch' href='http://s.w.org/' />
     <link rel="alternate" type="application/rss+xml" title="Gridlove &raquo; Feed" href="indexd784.html?feed=rss2" />
@@ -208,6 +209,8 @@
                                 <li id="menu-item-1884" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1884"><a href="institutes">Institutes</a>
                                     <ul class="sub-menu">
                                         <li id="menu-item-2026" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2026"><a href="vloglist">Vlogs</a></li>
+                                        <li id="menu-item-2026" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2026"><a href="vloglist">Reviews</a></li>
+
                                         <!-- <li id="menu-item-2286" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2286"><a href="index112a.html?page_id=2281">Queries</a></li> -->
                                     </ul>
                                 </li>
@@ -219,6 +222,9 @@
                                 </li>
                                 <li id="menu-item-2119" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2119"><a href="contact">Ask a Question</a>
                                 </li>
+                                <li id="menu-item-2119" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2119"><a href="addreview">Add a Review</a>
+                                </li>
+
                             </ul>
                         </div>
                     </nav>
@@ -402,7 +408,7 @@
                 {% csrf_token %}
                 <div class="container-fluid">
                     <div class="form-row">
-                        <div class="col-lg-6"><label>Your name</label><input type="text" name="name" required></div>
+                        <div class="col-lg-6"><label>Your Name</label><input type="text" name="name" required></div>
                         <div class="col-lg-6"><label>College name</label><input type="text" name="collegename" required></div>
                     </div>
                     <div class="form-row">
@@ -410,7 +416,7 @@
                     </div>
                     <br>
                     <div class="form-row">
-                        <div class="col-lg-12"><label>Description</label><textarea name="requests" required></textarea></div>
+                        <div class="col-lg-12"><label>Message</label><textarea name="requests" required></textarea></div>
                         <div class="col-lg-12"><label>Media </label><br>
                             <input type="file" name="filenew"></div>
                     </div>

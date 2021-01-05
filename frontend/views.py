@@ -87,7 +87,24 @@ def college(request):
 def thank(request):
     ad = Advertisement.objects.all()
     return render(request, 'thank.html', {'ad': ad})
+ 
+ 
+def addreview(request):
+    if request.method=="POST":
+        name = request.POST["name"]
+        email = request.POST["email"]
+        collegeemail = request.POST["collegeemail"]
+        collegename = request.POST["collegename"]
+        request = request.POST["request"]        
+        lead = Leads(name=name,college=collegename,email=email,college_email=collegeemail,request=request)
+        lead.save()
+        status = "true"
+        return redirect('thank')
+    else:
+        status = "false"
+        return render(request,'add-review.html', {'status': status})
     
+       
 class search(views.APIView):
     model = Vlogs,Vlogger,College
     serializer = VlogSerializer,VloggerSerializer,CollegeSerializer
